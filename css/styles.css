@@ -13,14 +13,14 @@
 .footer {
     background-color: #71BAF5;
     margin: 0px auto;
-    padding: 20px 0px 20px 0px;
+    padding: 30px 0px 20px 0px;
 }
 
 .jumbotron {
     padding: 70px 30px 70px 30px;
     margin: 0px auto;
     background: #D57CFF;
-    color: rgb(255, 211, 52);
+    color: #FFFFFF;
 }
 
 .address {
