@@ -188,10 +188,7 @@
                             </ol>
                             <a class="carousel-control-prev" href="#mycarousel" data-target="" role="button" data-slide="prev"><i class="carousel-control-prev-icon"></i></a>
                             <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next"><i class="carousel-control-next-icon"></i></a>
-                            <div class="btn-group" id="carouselButton">
-                                <button class="btn btn-danger btn-sm" id="carousel-pause"><i class="fa fa-pause"></i></button>
-                                <button class="btn btn-danger btn-sm" id="carousel-play"><i class="fa fa-play"></i></button>
-                            </div>
+                            <button class="btn btn-danger btn-sm" id="carouselButton"><i class="fa fa-pause"></i></button>
                         </div>
                     </div>
                 </div>
@@ -294,11 +291,16 @@
             // Check rready status of html 
             $(document).ready(function() {
                 $("#mycarousel").carousel({setInterval: 2000});
-                $("#carousel-pause").click(function() {
-                    $("#mycarousel").carousel("pause");
-                });
-                $("#carousel-play").click(function() {
-                    $("#mycarousel").carousel("cycle");
+                $("#carouselButton").click(function() {
+                    if($("#carouselButton").children("i").hasClass("fa fa-pause")){
+                        $("#mycarousel").carousel("pause");    
+                        $("#carouselButton").children("i").removeClass("fa fa-pause");
+                        $("#carouselButton").children("i").addClass("fa fa-play");
+                    }else {
+                        $("#mycarousel").carousel("cycle");    
+                        $("#carouselButton").children("i").removeClass("fa fa-play");
+                        $("#carouselButton").children("i").addClass("fa fa-pause");
+                    }
                 });
             });
             
