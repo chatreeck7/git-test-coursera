@@ -60,3 +60,10 @@ body {
     min-height: 300px;
     opacity: 85%;
 }
+
+#carouselButton {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+}
