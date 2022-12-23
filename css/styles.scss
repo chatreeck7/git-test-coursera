@@ -1,7 +1,8 @@
 $lt-gray: #ddd;
 $background-dark: #511f6c;
 $background-light: #D57CFF;
-$background-pale: #71BAF5;
+$background-footer: #71BAF5;
+$background-pale: #D1C4E9;
 
 //Height variables
 $carousel-item-height: 300px;
@@ -22,11 +23,11 @@ $carousel-item-height: 300px;
 }
 
 .footer {
-    background-color: $background-pale;
+    background-color: $background-footer;
     @include zero-margin(20px,20px);
 }
 
-.junbotron {
+.jumbotron {
     @include zero-margin(70px, 30px);
     background: $background-light;
     color: floralwhite;
@@ -64,6 +65,17 @@ body{
             min-height: 300px;
         }
     }
+}
+.modal-header{
+    background: $background-dark;
+    color: floralwhite;
+    button {
+        color: floralwhite;
+    }
+}
+
+.modal-body{
+    background: $background-pale;
 }
 
 #carouselButton {
