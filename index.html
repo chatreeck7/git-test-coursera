@@ -8,10 +8,12 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
         <!-- Bootstrap CSS -->
+        <!-- build:css css/main.css -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-        <link rel="stylesheet" href="/css/styles.css">
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- endbuild -->
         <title>Ristorante Con Fusion</title>
     </head>
 
@@ -283,56 +285,12 @@
             </div>
         </footer>
         <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+        <!-- build:js js/main.js -->
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script>
-            // Play&Pause carrousel
-            // Check rready status of html 
-            $(document).ready(function() {
-                $("#mycarousel").carousel({setInterval: 2000});
-                $("#carouselButton").click(function() {
-                    if($("#carouselButton").children("i").hasClass("fa fa-pause")){
-                        $("#mycarousel").carousel("pause");    
-                        $("#carouselButton").children("i").removeClass("fa fa-pause");
-                        $("#carouselButton").children("i").addClass("fa fa-play");
-                    }else if($("#carouselButton").children("i").hasClass("fa fa-play")){
-                        $("#mycarousel").carousel("cycle");    
-                        $("#carouselButton").children("i").removeClass("fa fa-play");
-                        $("#carouselButton").children("i").addClass("fa fa-pause");
-                    }
-                });
-                $("#loginButton").click(function() {   
-                    $("#loginModal").modal("show");
-                });
-                $("#reserveButton").click(function() {   
-                    $("#reserveModal").modal("show");
-                });
-            });
-            
-            // Dynamic HTML generation 
-            //Define the array of data
-            const data = [ 
-                { id: "onePerson", label: "1" },
-                { id: "twoPerson", label: "2" },
-                { id: "threePerson", label: "3" },
-                { id: "fourPerson", label: "4" },
-                { id: "fivePerson", label: "5" },
-                { id: "sixPerson", label: "6" },
-            ];
-
-            // Use FOR loop to generate html code
-            // also use the same "name" attribute to make it be a single choice
-            let html = "";
-            for(let i = 0; i < data.length; i++){
-                html += `<div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="${data[i].id}" name="person" value="option${i+1}" required>      
-                            <label for="${data[i].id}" class="form-check-label">${data[i].label}<label>
-                        </div>`;
-            }
-            // Add the generated HTML to the page 
-            document.getElementById("radio-buttons").innerHTML = html;
-        </script>
+        <script src="js/scripts.js"></script>
+        <!-- endbuild -->
     </body>
 
 </html>
